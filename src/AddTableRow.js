@@ -40,7 +40,7 @@ const AddTableRow = (props) => {
             status: addFormData.status,
         }
 
-        const newAllTheData = [...data, newData]
+        const newAllTheData = [newData, ...data]
 
         // browser mode, without JSON POST method
         if (addFormData.orderNo != null) {
