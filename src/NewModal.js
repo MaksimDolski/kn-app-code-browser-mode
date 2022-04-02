@@ -1,13 +1,13 @@
 const NewModal = (props) => {
 
-    const { handleClickCloseAddTableRow, handleAddFormChange, handleClickSaveAddTableRow } = props
+    const { handleCloseAddTableRowClick, handleAddFormChange, handleSaveAddTableRowClick} = props
 
     return (
         <>
             
             <div className="modal">
                 <div className="modal-content">
-                    <span onClick={ handleClickCloseAddTableRow } className="close">&times;</span>
+                    <span onClick={ handleCloseAddTableRowClick } className="close">&times;</span>
                         <div className="modal-body"> 
                             <div className="shipment-form">
                                 <p className="details">shipment details</p>
@@ -43,8 +43,8 @@ const NewModal = (props) => {
                                     </p>
 
                                 </form>
-                                        <button onClick={ handleClickSaveAddTableRow } className="btn-shipment btn-shipment-save">Save</button>
-                                        <button onClick={ handleClickCloseAddTableRow } className="btn-shipment btn-shipment-close">Close</button>
+                                        <button onClick={ handleSaveAddTableRowClick} className="btn-shipment btn-shipment-save">Save</button>
+                                        <button onClick={ handleCloseAddTableRowClick } className="btn-shipment btn-shipment-close">Close</button>
                             </div>
                         </div>
                 </div>

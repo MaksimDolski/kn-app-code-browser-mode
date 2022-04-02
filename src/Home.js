@@ -175,15 +175,8 @@ const Home = () => {
       "trackingNo": "TP-558037-48509866-0809205",
       "status": "'Delivered'",
       "consignee": "Fulton Financial Corporation"
-    },
-    {
-      "orderNo": "1",
-      "date": "",
-      "customer": "HHLA TK Estonia AS",
-      "trackingNo": "",
-      "consignee": "",
-      "status": ""
-    }])
+    }
+  ])
 
 
     // ******* <Modal> *******
@@ -192,7 +185,7 @@ const Home = () => {
     // open button
     const [openModalData, setOpenModalData] = useState()
 
-    const handleClickOpenModal = (data) => {
+    const handleOpenModalClick = (data) => {
         setIsShowModal(true)
         setOpenModalData({
             id: data.id,
@@ -208,7 +201,7 @@ const Home = () => {
    // modal changing
 
         let newFormData = {}
-        const handleCLickModalChange = (e) => {
+        const handleModalChangeClick = (e) => {
             e.preventDefault()
 
             const fieldName = e.target.getAttribute("name")
@@ -221,7 +214,7 @@ const Home = () => {
 
         }
 
-        const handleClickSaveAddTableRow = () => {
+        const handleSaveAddTableRowClick= () => {
 
             //  Data adding using Browser Mode
             const newArray = [...data, openModalData]
@@ -239,7 +232,7 @@ const Home = () => {
         }
 
     // close button
-     function handleClickCloseModal() {
+     function handleCloseModalClick() {
         setIsShowModal(false)
     }
     // ******* <Modal /> *******
@@ -248,19 +241,19 @@ const Home = () => {
     const [isShowAddTableRow, setIsShowAddTableRow] = useState(false)
     
     // open button
-    function handleClickOpenAddTableRow() { 
+    function handleOpenAddTableRowClick() { 
         setIsShowAddTableRow(true)
     }
 
     // close button
-    function handleClickCloseAddTableRow() { 
+    function handleCloseAddTableRowClick() { 
         setIsShowAddTableRow(false)
     }
 
     // ******* <AddTableRow /> *******
 
     // <Table /> delete button
-     const handleClickDeleteTableRow = (id) => {
+     const handleDeleteTableRowClick = (id) => {
         const confirm = window.confirm("Are you sure, that you want to delete this row?")
         if(confirm) {
            let dataList = data.filter(item => {
@@ -278,16 +271,16 @@ const Home = () => {
   
             <Table
             data={ data }
-            handleClickOpenModal={ handleClickOpenModal }
-            handleClickDeleteTableRow={ handleClickDeleteTableRow }  
-            handleClickOpenAddTableRow={ handleClickOpenAddTableRow}        
+            handleOpenModalClick={ handleOpenModalClick }
+            handleDeleteTableRowClick={ handleDeleteTableRowClick }  
+            handleOpenAddTableRowClick={ handleOpenAddTableRowClick}        
             />
 
             { isShowAddTableRow &&
             <AddTableRow
             data={ data }
             setData={ setData }
-            handleClickCloseAddTableRow={ handleClickCloseAddTableRow }
+            handleCloseAddTableRowClick={ handleCloseAddTableRowClick }
             /> }
 
 
@@ -295,9 +288,9 @@ const Home = () => {
             <Modal 
             data={ data }
             openModalData={ openModalData }
-            handleClickCloseModal={ handleClickCloseModal }
-            handleCLickModalChange={handleCLickModalChange}
-            handleClickSaveAddTableRow={handleClickSaveAddTableRow}
+            handleCloseModalClick={ handleCloseModalClick }
+            handleModalChangeClick={handleModalChangeClick}
+            handleSaveAddTableRowClick={handleSaveAddTableRowClick}
             /> }
         </>
     )

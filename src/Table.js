@@ -4,9 +4,9 @@ const Table = (props) => {
 
     const { 
         data,
-        handleClickOpenModal,
-        handleClickDeleteTableRow,
-        handleClickOpenAddTableRow,
+        handleOpenModalClick,
+        handleDeleteTableRowClick,
+        handleOpenAddTableRowClick,
 
     } = props
 
@@ -23,14 +23,14 @@ const Table = (props) => {
                             <td>tracking no</td>
                             <td>status</td>
                             <td>consignee</td>
-                            <td><button onClick={ handleClickOpenAddTableRow }>Add Tracking</button></td>
+                            <td><button onClick={ handleOpenAddTableRowClick }>Add Tracking</button></td>
                         </tr>
                     </thead>
                         <tbody>
                             <TableData
                             data = { data } 
-                            handleClickOpenModal={handleClickOpenModal}
-                            handleClickDeleteTableRow={handleClickDeleteTableRow}
+                            handleOpenModalClick={handleOpenModalClick}
+                            handleDeleteTableRowClick={handleDeleteTableRowClick}
                             />
                         </tbody>
                 </table>

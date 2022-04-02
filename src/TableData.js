@@ -1,6 +1,6 @@
 const TableData = (props) => {
 
-    const { data, handleClickOpenModal, handleClickDeleteTableRow } = props
+    const { data, handleOpenModalClick, handleDeleteTableRowClick } = props
 
     
     return (
@@ -16,8 +16,8 @@ const TableData = (props) => {
                 <td className='main-data consignee'> { data.consignee } </td>
             
                 <td className='main-data-btn'>
-                    <button onClick={ () => handleClickOpenModal(data) } className="btn-open main-data-btn"></button>
-                    <button onClick={ () => handleClickDeleteTableRow(data.id) } className="btn-delete main-data-btn"></button>
+                    <button onClick={ () => handleOpenModalClick(data) } className="btn-open main-data-btn"></button>
+                    <button onClick={ () => handleDeleteTableRowClick(data.id) } className="btn-delete main-data-btn"></button>
                 </td>
             
                 <td className='main-data-btn'>

@@ -3,7 +3,7 @@ import NewModal from "./NewModal"
 
 const AddTableRow = (props) => {
 
-    const { data, setData, handleClickCloseAddTableRow } = props
+    const { data, setData, handleCloseAddTableRowClick } = props
 
     const [addFormData, setAddFormData] = useState({
         id: "",
@@ -28,10 +28,10 @@ const AddTableRow = (props) => {
     }
 
     // save button
-    const handleClickSaveAddTableRow = () => {
+    const handleSaveAddTableRowClick= () => {
 
         const newData = {
-            id: addFormData.orderNo,
+            id: addFormData.id,
             orderNo: addFormData.orderNo,
             date: addFormData.date,
             customer: addFormData.customer,
@@ -45,7 +45,7 @@ const AddTableRow = (props) => {
         // browser mode, without JSON POST method
         if (addFormData.orderNo != null) {
             setData(newAllTheData)
-            handleClickCloseAddTableRow()
+            handleCloseAddTableRowClick()
         } else {
             alert("Enter the order number.")
         }
@@ -56,8 +56,8 @@ const AddTableRow = (props) => {
     return (
         <>
             { data && <NewModal 
-            handleClickCloseAddTableRow={ handleClickCloseAddTableRow } 
-            handleClickSaveAddTableRow= { handleClickSaveAddTableRow }
+            handleCloseAddTableRowClick={ handleCloseAddTableRowClick } 
+            handleSaveAddTableRowClick= { handleSaveAddTableRowClick}
             handleAddFormChange={ handleAddFormChange }
             />}
         </>
